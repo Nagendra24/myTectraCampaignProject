@@ -1,0 +1,25 @@
+{% extends 'bootstrap_sidebar_pro_template.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<!--https://www.youtube.com/watch?v=k3cwPmdrkm4-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--External css-->
+
+<!--<form action="/home_page/user" method="post" novalidate> {% csrf_token %}-->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<form action ="" method = "post" novalidate> {% csrf_token %}
+    {{user_form | crispy }}
+
+    <input type = "submit" value = "Submit" class="btn btn-primary btn-sm">
+    <!--success gives green button,primary gives blue color to button. Warning gives orange button.
+    btn-sm makes the button size small-->
+</form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style.css'%}"/>
+
+<div class="inp1">
+	<form action="" method="post" novalidate> {% csrf_token %}
+		<div class="img">
+		<img src="{% static 'logo2.jpg' %}" height="70px" width="240px"/>
+		</div>
+		<div class="info">
+		<input type="text" name="username" id="username" placeholder="Enter username" size="20" /><br/>
+		{{ coreForms.username.errors }}
+		<input type="password" name="password" id="password" placeholder="Enter Password" size="20"  /><br/><br/>
+		{{ coreForms.password.errors }}
+		</div>
+		<span id="chk">
+		<input type="checkbox" name="chk" /><label>Remember me</label>
+		</span>
+		<span id="bt">
+		<input type="submit" name="login" value="Login" />
+		</span>
+	</form>
+</div>
+
+
+{% endblock %}
